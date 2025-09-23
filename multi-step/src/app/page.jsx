@@ -18,11 +18,7 @@ export default function Home() {
 
   return (
     <div>
-      <CurrentStep />
-      <button onClick={handleBack} className="rounded-2xl p-4">
-        Back
-      </button>
-      <button onClick={handleNext}> Next</button>
+      <CurrentStep handleNext={handleNext} handleBack={handleBack} />
     </div>
   );
 }
