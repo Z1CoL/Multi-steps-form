@@ -1,7 +1,9 @@
+"use client";
 import { PageOne } from "@/components/PageOne";
 import { PageTwo } from "@/components/PageTwo";
+import { Button } from "@/components/Button";
 
-export function PageThree() {
+export function PageThree({ handleBack, handleNext, text }) {
   return (
     <div className="w-full h-screen flex items-center justify-center bg-[azure]">
       <div className="w-[480px] h-[655px] bg-white shadow-2xl rounded-[8px]">
@@ -19,9 +21,9 @@ export function PageThree() {
           <div className="w-[416px] h-[328px]">
             <form className="pt-[10px]">
               <label className="flex flex-col">
-                First name
+                Date of birth *
                 <input
-                  type="text"
+                  type="date"
                   placeholder="Placeholder"
                   className="px-3 py-2 border-1 mt-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 text-lg"
                 />
@@ -30,27 +32,27 @@ export function PageThree() {
 
             <form className="pt-[10px]">
               <label className="flex flex-col">
-                Last name
+                Profile image *
                 <input
-                  type="text"
-                  placeholder="Placeholder"
-                  className="px-3 py-2 border-1 mt-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 text-lg"
-                />
-              </label>
-            </form>
-
-            <form className="pt-[10px]">
-              <label className="flex flex-col">
-                Username
-                <input
-                  type="text"
+                  type="file"
                   placeholder="Placeholder"
                   className="px-3 py-2 border-1 mt-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 text-lg"
                 />
               </label>
             </form>
           </div>
-          <Button isContinue={true} buttonDamjuulah={handleNext} />
+          <div className="flex mt-[160px] justify-between">
+            <Button
+              isContinue={true}
+              buttonDamjuulah={handleBack}
+              text={"← Back"}
+            />
+            <Button
+              isContinue={false}
+              buttonDamjuulah={handleNext}
+              text={"Submit 3/3 ➔"}
+            />
+          </div>
         </div>
       </div>
     </div>

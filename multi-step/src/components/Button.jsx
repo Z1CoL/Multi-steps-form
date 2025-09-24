@@ -4,13 +4,7 @@ import { PageOne } from "@/components/PageOne";
 import { PageTwo } from "@/components/PageTwo";
 import { PageThree } from "@/components/PageThree";
 
-export function Button({ buttonDamjuulah, isContinue }) {
-  const buttons = {
-    nonSplited: "",
-    Splited: "",
-    back: "",
-  };
-
+export function Button({ buttonDamjuulah,isContinue, text }) {
   if (isContinue) {
     return (
       <div>
@@ -30,8 +24,8 @@ export function Button({ buttonDamjuulah, isContinue }) {
         onClick={buttonDamjuulah}
         className="w-full h-[50px] bg-black text-white rounded-[8px] cursor-pointer"
       >
-        {" "}
-        Next 1/3 ►
+        {text}
+        
       </button>
     </div>
   );

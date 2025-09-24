@@ -4,6 +4,15 @@ import { PageTwo } from "@/components/PageTwo";
 import { PageThree } from "@/components/PageThree";
 
 export function PageOne({ handleNext }) {
+  const [errors, setErrors] = useState();
+
+  const onClickBtn = (event) => {
+    event.preventDefault();
+    if (event.target.name.value.length < 3) {
+        setErrors()
+    }
+  };
+
   return (
     <div className="w-full h-screen flex items-center justify-center bg-[azure]">
       <div className="w-[480px] h-[655px] bg-white shadow-2xl rounded-[8px]">
@@ -19,10 +28,23 @@ export function PageOne({ handleNext }) {
           </div>
 
           <div className="w-[416px] h-[328px]">
-            <form className="pt-[10px]">
+            <form className="pt-[10px]" onSubmit={onClickBtn}>
               <label className="flex flex-col">
-                First name
+                First name *
                 <input
+                  type="text"
+                  name="firstName"
+                  placeholder="Placeholder"
+                  className="px-3 py-2 border-1 mt-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 text-lg"
+                />
+              </label>
+            </form>
+
+            <form className="pt-[10px]" onSubmit={onClickBtn}>
+              <label className="flex flex-col">
+                Last name *
+                <input
+                  lastName="lastName"
                   type="text"
                   placeholder="Placeholder"
                   className="px-3 py-2 border-1 mt-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 text-lg"
@@ -30,21 +52,11 @@ export function PageOne({ handleNext }) {
               </label>
             </form>
 
-            <form className="pt-[10px]">
+            <form className="pt-[10px]" onSubmit={onClickBtn}>
               <label className="flex flex-col">
-                Last name
+                Username *
                 <input
-                  type="text"
-                  placeholder="Placeholder"
-                  className="px-3 py-2 border-1 mt-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 text-lg"
-                />
-              </label>
-            </form>
-
-            <form className="pt-[10px]">
-              <label className="flex flex-col">
-                Username
-                <input
+                  username="userName"
                   type="text"
                   placeholder="Placeholder"
                   className="px-3 py-2 border-1 mt-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 text-lg"
@@ -56,6 +68,7 @@ export function PageOne({ handleNext }) {
             <Button
               isContinue={false}
               types="nonSplited"
+              text={"Next 1/3 ➔"}
               buttonDamjuulah={handleNext}
             />
           </div>

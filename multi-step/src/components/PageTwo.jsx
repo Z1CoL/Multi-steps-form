@@ -2,7 +2,7 @@ import { PageOne } from "@/components/PageOne";
 import { Button } from "@/components/Button";
 import { PageThree } from "@/components/PageThree";
 
-export function PageTwo({ handleBack, handleNext }) {
+export function PageTwo({ handleBack, handleNext, text }) {
   return (
     <div className="w-full h-screen flex items-center justify-center bg-[azure]">
       <div className="w-[480px] h-[655px] bg-white shadow-2xl rounded-[8px]">
@@ -20,7 +20,7 @@ export function PageTwo({ handleBack, handleNext }) {
           <div className="w-[416px] h-[328px]">
             <form className="pt-[10px]">
               <label className="flex flex-col">
-                First name
+                Email *
                 <input
                   type="text"
                   placeholder="Placeholder"
@@ -31,7 +31,7 @@ export function PageTwo({ handleBack, handleNext }) {
 
             <form className="pt-[10px]">
               <label className="flex flex-col">
-                Last name
+                Phone number *
                 <input
                   type="text"
                   placeholder="Placeholder"
@@ -42,7 +42,18 @@ export function PageTwo({ handleBack, handleNext }) {
 
             <form className="pt-[10px]">
               <label className="flex flex-col">
-                Username
+                Password *
+                <input
+                  type="text"
+                  placeholder="Placeholder"
+                  className="px-3 py-2 border-1 mt-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 text-lg"
+                />
+              </label>
+            </form>
+
+            <form className="pt-[10px]">
+              <label className="flex flex-col">
+                Confirm password *
                 <input
                   type="text"
                   placeholder="Placeholder"
@@ -51,9 +62,17 @@ export function PageTwo({ handleBack, handleNext }) {
               </label>
             </form>
           </div>
-          <div className="flex mt-[160px] justify-between" >
-            <Button isContinue={true} buttonDamjuulah={handleNext} />
-            <Button isContinue={false} buttonDamjuulah={handleBack} />
+          <div className="flex mt-[100px] justify-between">
+            <Button
+              isContinue={true}
+              buttonDamjuulah={handleBack}
+              text={"← Back"}
+            />
+            <Button
+              isContinue={false}
+              buttonDamjuulah={handleNext}
+              text={"Next 2/3 ➔"}
+            />
           </div>
         </div>
       </div>
