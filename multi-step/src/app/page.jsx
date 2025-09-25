@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div>
-      <CurrentStep handleNext={handleNext} handleBack={handleBack}/>
+      <CurrentStep handleNext={handleNext} handleBack={handleBack} />
     </div>
   );
 }
