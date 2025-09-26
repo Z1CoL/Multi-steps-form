@@ -11,8 +11,8 @@ export function PageTwo({ handleBack, handleNext }) {
 
   const [errors, setErrors] = useState({});
 
-  const onChangeInput = (e) => {
-    const { name, value } = e.target;
+  const onChangeInput = (event) => {
+    const { name, value } = event.target;
     setFormValues((prev) => ({ ...prev, [name]: value }));
 
     setErrors((prev) => {
